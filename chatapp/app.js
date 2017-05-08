@@ -6,13 +6,17 @@ app.get('/', (req, res) => {
 });
 io.on("connection", (socket) => {
     console.log("user is connected");
-    socket.on("chat message", (msg) => {
-        io.emit("chat message",msg);
-    })
+    socket.on("add-message",(message)=>{
+        io.emit("message",{type:"new-message",text:message,"username":username});
+    });
+    // socket.on("chat message", (msg) => {
+    //     io.emit("chat message",msg);
+    // });
     socket.on("disconnect", () => {
         console.log("DISCONNECT");
-    })
+    });
+
 });
-http.listen(80, () => {
-    console.log("Listening to port 80");
+http.listen(8080, () => {
+    console.log("Listening to port 8080");
 });
