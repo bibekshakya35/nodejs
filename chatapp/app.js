@@ -6,12 +6,21 @@ app.get('/', (req, res) => {
 });
 io.on("connection", (socket) => {
     console.log("user is connected");
-    socket.on("add-message",(message)=>{
-        io.emit("message",{type:"new-message",text:message,"username":username});
+    socket.on("adduser", function (data) {
+        console.log("IS USER CAME", JSON.stringify(data));
+        var username = data.username;
+        var room = data.room;
+        socket.username = username;
+        socket.room = room;
+        socket.join(room);
+        io.emit("updatechat", { type: "new-message", info: username + " has been joined", text: '' });
     });
-    // socket.on("chat message", (msg) => {
-    //     io.emit("chat message",msg);
-    // });
+    socket.on("add-message", (message,username) => {
+      if(message.length>0){
+            console.log(message);
+        io.emit("message", { type: "new-message", text: message,username:username});
+      }
+    });
     socket.on("disconnect", () => {
         console.log("DISCONNECT");
     });
