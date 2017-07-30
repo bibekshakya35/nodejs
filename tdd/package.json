@@ -1,0 +1,38 @@
+{
+  "name": "tdd",
+  "version": "0.0.1",
+  "description": "tdd",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon index.js --exec babel-node --presets es2015,stage-2",
+    "test": "mocha --timeout 10000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bibekshakya35/nodejs.git"
+  },
+  "keywords": [
+    "Tdd"
+  ],
+  "author": "Bibek Shakya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bibekshakya35/nodejs/issues"
+  },
+  "homepage": "https://github.com/bibekshakya35/nodejs#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "config": "^1.26.1",
+    "express": "^4.15.3",
+    "mongoose": "^4.11.3",
+    "morgan": "^1.8.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "chai": "^4.1.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.4.2"
+  }
+}
