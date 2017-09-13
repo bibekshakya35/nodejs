@@ -7,16 +7,11 @@ import blogPostInputType from '../../types/blog-post-input';
 import BlogPostModel from '../../../models/blog-post';
 
 export default{
-    types:GraphQLBoolean,
+    type:GraphQLBoolean,
     args:{
         data:{
             name:'data',
-            args:{
-                data:{
-                    name:'data',
-                    type:new GraphQLNonNull(blogPostInputType)
-                }
-            }
+            type:new GraphQLNonNull(blogPostInputType)
         }
     },
     async resolve(root,params,options){

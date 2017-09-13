@@ -3,12 +3,12 @@ import {
     GraphQLID
 } from 'graphql';
 
-import blogPostInputType from '../../types/blog-post-input';
+import blogPostType from '../../types/blog-post';
 import getProjection from '../../get-projection';
 import BlogPostModel from '../../../models/blog-post';
 
 export default {
-    type: blogPostInputType,
+    type: blogPostType,
     args: {
         _id: {
             name: "_id",

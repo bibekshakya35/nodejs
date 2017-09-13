@@ -3,7 +3,7 @@ import {
     GraphQLID,
     GraphQLNonNull
 } from 'graphql';
-import {Types} from mongoose;
+import {Types} from 'mongoose';
 
 import commentType from '../../types/comment';
 import getProjection from '../../get-projection';
